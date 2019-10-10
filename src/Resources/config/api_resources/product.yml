@@ -1,0 +1,11 @@
+resources:
+    '%coreshop.api.view_model.product.class%':
+        collectionOperations: []
+        itemOperations:
+            get:
+                path: '/product/{id}'
+                requirements:
+                    id: '\d+'
+        properties:
+            id:
+                identifier: true

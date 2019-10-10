@@ -1,0 +1,16 @@
+security:
+    firewalls:
+        coreshop_api:
+            pattern: "%coreshop_api.security.regex%"
+            stateless: true
+            anonymous: true
+            provider: coreshop.security.customer.user_provider
+            json_login:
+                check_path: /coreshop-api/login
+                username_path: email
+                password_path: password
+                success_handler: lexik_jwt_authentication.handler.authentication_success
+                failure_handler: lexik_jwt_authentication.handler.authentication_failure
+            guard:
+                authenticators:
+                    - lexik_jwt_authentication.jwt_token_authenticator

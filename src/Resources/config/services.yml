@@ -1,0 +1,6 @@
+imports:
+    - { resource: 'services/factories.yml' }
+    - { resource: 'services/repositories.yml' }
+    - { resource: 'services/handlers.yml' }
+    - { resource: 'services/api_platform.yml' }
+

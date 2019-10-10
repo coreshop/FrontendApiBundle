@@ -1,0 +1,29 @@
+#coreshop_api_address_create:
+#    path: /addresses/
+#    methods: [POST]
+#    defaults:
+#        _controller: coreshop.api.controller.addres.create
+#
+#coreshop_api_address_index:
+#    path: /addresses/
+#    methods: [GET]
+#    defaults:
+#        _controller: coreshop.api.controller.addres.list
+#
+#coreshop_api_address_delete:
+#    path: /addresses/{id}
+#    methods: [DELETE]
+#    defaults:
+#        _controller: coreshop.api.controller.addres.delete
+#
+#coreshop_api_address_update:
+#    path: /addresses/{id}
+#    methods: [PUT, PATCH]
+#    defaults:
+#        _controller: coreshop.api.controller.address.update
+#
+#coreshop_api_set_default_address:
+#    path: /addresses/{id}/default
+#    methods: [PATCH]
+#    defaults:
+#        _controller: coreshop.api.controller.address.set_default_address

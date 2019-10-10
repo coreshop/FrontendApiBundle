@@ -1,0 +1,9 @@
+services:
+    CoreShop\Bundle\ApiBundle\ViewFactory\Product\ProductViewFactoryInterface: '@CoreShop\Bundle\ApiBundle\ViewFactory\Product\ProductViewFactory'
+    CoreShop\Bundle\ApiBundle\ViewFactory\Product\ProductViewFactory:
+        arguments:
+            - '%coreshop.api.view_model.product.class%'
+            - '@coreshop.api.factory.price_view'
+            - '@coreshop.context.shopper'
+            - '@CoreShop\Component\Core\Product\TaxedProductPriceCalculator'
+

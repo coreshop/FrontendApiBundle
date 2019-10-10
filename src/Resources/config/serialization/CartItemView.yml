@@ -1,0 +1,11 @@
+CoreShop\Bundle\ApiBundle\ViewModel\Cart\CartItemView:
+    attributes:
+        id:
+            groups: ['cart_item:item:get', 'cart_summary:item:get']
+        quantity:
+            groups: ['cart_item:item:get', 'cart_summary:item:get']
+        total:
+            groups: ['cart_item:item:get', 'cart_summary:item:get']
+        product:
+            groups: ['cart_item:item:get', 'cart_summary:item:get']
+

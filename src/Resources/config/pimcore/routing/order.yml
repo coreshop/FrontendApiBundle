@@ -1,0 +1,11 @@
+#coreshop_api_orders_list:
+#    path: /orders
+#    methods: [GET]
+#    defaults:
+#        _controller: coreshop.api.controller.order.show_orders_list_action
+#
+#coreshop_api_order_details:
+#    path: /orders/{tokenValue}
+#    methods: [GET]
+#    defaults:
+#        _controller: coreshop.api.controller.order.show_order_details_action

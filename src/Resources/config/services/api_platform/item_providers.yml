@@ -1,0 +1,18 @@
+services:
+    CoreShop\Bundle\ApiBundle\ApiPlatform\ItemProvider\Cart\CartSummaryViewProvider:
+        arguments:
+            - '@CoreShop\Bundle\ApiBundle\ViewRepository\CartViewRepositoryInterface'
+        tags:
+            - { name: api_platform.item_data_provider }
+
+    CoreShop\Bundle\ApiBundle\ApiPlatform\ItemProvider\Cart\CartItemViewProvider:
+        arguments:
+            - '@CoreShop\Bundle\ApiBundle\ViewRepository\CartItemViewRepositoryInterface'
+        tags:
+            - { name: api_platform.item_data_provider }
+
+    CoreShop\Bundle\ApiBundle\ApiPlatform\ItemProvider\ProductViewProvider:
+        arguments:
+            - '@CoreShop\Bundle\ApiBundle\ViewRepository\ProductViewRepositoryInterface'
+        tags:
+            - { name: api_platform.item_data_provider }

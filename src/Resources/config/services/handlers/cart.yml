@@ -1,0 +1,11 @@
+services:
+    CoreShop\Bundle\ApiBundle\Handler\Cart\AddToCartActionHandler:
+        arguments:
+            - '@CoreShop\Component\Order\Factory\CartItemFactory'
+            - '@CoreShop\Bundle\OrderBundle\Factory\AddToCartFactory'
+            - '@form.factory'
+            - '@CoreShop\Component\Order\Cart\CartModifier'
+            - '@CoreShop\Bundle\OrderBundle\Manager\CartManager'
+            - '@CoreShop\Bundle\ApiBundle\ViewFactory\Cart\CartViewFactoryInterface'
+        tags:
+            - { name: messenger.message_handler }

@@ -1,0 +1,41 @@
+{
+  "name": "coreshop/api-bundle",
+  "type": "pimcore-bundle",
+  "description": "CoreShop - API Bundle",
+  "keywords": [
+    "coreshop",
+    "pimcore",
+    "ecommerce",
+    "api"
+  ],
+  "homepage": "http://www.coreshop.org",
+  "license": "GPL-3.0-or-later",
+  "authors": [
+    {
+      "name": "Dominik Pfaffenbauer",
+      "email": "dominik@pfaffenbauer.at",
+      "homepage": "https://www.pfaffenbauer.at/",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "coreshop/core-shop": "^2.1",
+    "webonyx/graphql-php": "^0.13",
+    "api-platform/core": "^2.5@beta"
+  },
+  "config": {
+    "bin-dir": "bin"
+  },
+  "autoload": {
+    "psr-4": {
+      "CoreShop\\Bundle\\ApiBundle\\": "src/"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "extra": {
+    "branch-alias": {
+      "dev-master": "2.1-dev"
+    }
+  }
+}

@@ -1,0 +1,56 @@
+resources:
+    '%coreshop.api.view_model.cart_summary.class%':
+        collectionOperations: []
+        subresourceOperations:
+            items_get_subresource:
+                  method: get
+                  path: '/cart/{id}/items'
+        itemOperations:
+            get:
+                path: '/cart/{id}'
+                requirements:
+                    id: '\d+'
+                normalization_context:
+                    groups: ['cart_summary:item:get']
+        properties:
+            id:
+                identifier: true
+            items:
+                subresource:
+                    resourceClass: '%coreshop.api.view_model.cart_item.class%'
+                    collection: true
+                    maxDepth: 2
+
+    '%coreshop.api.view_model.cart_item.class%':
+        collectionOperations: []
+        itemOperations:
+            get:
+                path: '/cart_item/{id}'
+                requirements:
+                    id: '\d+'
+                normalization_context:
+                    groups: ['cart_item:item:get']
+        subresourceOperations: []
+        properties:
+            id:
+                identifier: true
+
+    CoreShop\Bundle\ApiBundle\Action\Cart\AddToCartAction:
+        collectionOperations:
+            add_item:
+                path: '/cart/{id}/add-item'
+                method: post
+                requirements:
+                    id: '\d+'
+                swagger_context:
+                    parameters:
+                        -   in: path
+                            name: id
+                            description: 'Cart Id'
+                            schema:
+                                type: string
+        itemOperations: []
+        attributes:
+            messenger: true
+            input: CoreShop\Bundle\ApiBundle\Action\Cart\AddToCartActionInput
+            output: CoreShop\Bundle\ApiBundle\ViewModel\Cart\CartSummaryView

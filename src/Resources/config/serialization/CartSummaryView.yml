@@ -1,0 +1,12 @@
+CoreShop\Bundle\ApiBundle\ViewModel\Cart\CartSummaryView:
+    attributes:
+        id:
+            groups: ['cart_summary:item:get']
+        store:
+            groups: ['cart_summary:item:get']
+        currency:
+            groups: ['cart_summary:item:get']
+        locale:
+            groups: ['cart_summary:item:get']
+        items:
+            groups: ['cart_summary:item:get']
