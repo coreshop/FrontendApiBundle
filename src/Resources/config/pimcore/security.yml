@@ -1,12 +1,12 @@
 security:
     firewalls:
         coreshop_api:
-            pattern: "%coreshop_api.security.regex%"
             stateless: true
             anonymous: true
-            provider: coreshop.security.customer.user_provider
+            pattern: ^/coreshop-api-platform/
+            provider: coreshop_customer
             json_login:
-                check_path: /coreshop-api/login
+                check_path: /coreshop-api-platform/authentication_token
                 username_path: email
                 password_path: password
                 success_handler: lexik_jwt_authentication.handler.authentication_success

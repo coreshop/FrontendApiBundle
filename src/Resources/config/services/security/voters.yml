@@ -1,0 +1,6 @@
+services:
+    CoreShop\Bundle\ApiBundle\Security\Voter\CartVoter:
+        arguments:
+            - '@coreshop.repository.cart'
+        tags:
+            - { name: 'security.voter' }

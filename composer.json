@@ -1,5 +1,5 @@
 {
-  "name": "coreshop/api-bundle",
+  "name": "coreshop/frontend-api-bundle",
   "type": "pimcore-bundle",
   "description": "CoreShop - API Bundle",
   "keywords": [
@@ -21,7 +21,8 @@
   "require": {
     "coreshop/core-shop": "^2.1",
     "webonyx/graphql-php": "^0.13",
-    "api-platform/core": "^2.5@beta"
+    "api-platform/core": "^2.5@beta",
+    "lexik/jwt-authentication-bundle": "^2.6.4"
   },
   "config": {
     "bin-dir": "bin"
@@ -35,7 +36,7 @@
   "prefer-stable": true,
   "extra": {
     "branch-alias": {
-      "dev-master": "2.1-dev"
+      "dev-master": "1.0-dev"
     }
   }
 }

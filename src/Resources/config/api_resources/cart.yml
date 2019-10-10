@@ -5,6 +5,8 @@ resources:
             items_get_subresource:
                   method: get
                   path: '/cart/{id}/items'
+                  access_control: 'is_granted("coreshop_api_cart_item", object)'
+                  security_message: 'Sorry, but you are not the cart owner'
         itemOperations:
             get:
                 path: '/cart/{id}'
@@ -12,6 +14,7 @@ resources:
                     id: '\d+'
                 normalization_context:
                     groups: ['cart_summary:item:get']
+                access_control: 'is_granted("coreshop_api_cart", object)'
         properties:
             id:
                 identifier: true
@@ -30,6 +33,7 @@ resources:
                     id: '\d+'
                 normalization_context:
                     groups: ['cart_item:item:get']
+                access_control: 'is_granted("coreshop_api_cart_item", object)'
         subresourceOperations: []
         properties:
             id:
@@ -40,6 +44,7 @@ resources:
             add_item:
                 path: '/cart/{id}/add-item'
                 method: post
+                access_control: 'is_granted("coreshop_api_add_to_cart", object)'
                 requirements:
                     id: '\d+'
                 swagger_context:

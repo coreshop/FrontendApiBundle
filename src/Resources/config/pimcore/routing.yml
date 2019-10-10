@@ -1,44 +1,8 @@
-#coreshop_api_cart:
-#    resource: "@CoreShopApiBundle/Resources/config/pimcore/routing/cart.yml"
-#    prefix: /coreshop-api
-#
-#coreshop_api_product:
-#    resource: "@CoreShopApiBundle/Resources/config/pimcore/routing/product.yml"
-#    prefix: /coreshop-api
-#
-#coreshop_api_category:
-#    resource: "@CoreShopApiBundle/Resources/config/pimcore/routing/category.yml"
-#    prefix: /coreshop-api
-#
-#coreshop_api_register:
-#    resource: "@CoreShopApiBundle/Resources/config/pimcore/routing/register.yml"
-#    prefix: /coreshop-api
-#
-#coreshop_api_checkout:
-#    resource: "@CoreShopApiBundle/Resources/config/pimcore/routing/checkout.yml"
-#    prefix: /coreshop-api/checkout
-#
-#coreshop_api_customer:
-#    resource: "@CoreShopApiBundle/Resources/config/pimcore/routing/customer.yml"
-#    prefix: /coreshop-api
-#
-#coreshop_api_product_list:
-#    resource: "@CoreShopApiBundle/Resources/config/pimcore/routing/productList.yml"
-#    prefix: /coreshop-api
-#
-#coreshop_api_address_book:
-#    resource: "@CoreShopApiBundle/Resources/config/pimcore/routing/address.yml"
-#    prefix: /coreshop-api
-#
-#coreshop_api_order:
-#    resource: "@CoreShopApiBundle/Resources/config/pimcore/routing/order.yml"
-#    prefix: /coreshop-api
-#
-#coreshop_api_login:
-#    methods: [POST]
-#    path: /coreshop-api/login
-
 coreshop_api_platform:
     resource: api
     type: api_platform
     prefix: /coreshop-api-platform
+
+coreshop_api_platform_authentication_token:
+    path: /coreshop-api-platform/authentication_token
+    methods: ['POST']
