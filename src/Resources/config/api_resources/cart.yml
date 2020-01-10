@@ -1,5 +1,6 @@
 resources:
     '%coreshop.api.view_model.cart_summary.class%':
+        shortName: 'CartSummary'
         collectionOperations: []
         subresourceOperations:
             items_get_subresource:
@@ -15,6 +16,9 @@ resources:
                 normalization_context:
                     groups: ['cart_summary:item:get']
                 access_control: 'is_granted("coreshop_api_cart", object)'
+        graphql:
+            item_query:
+                pagination_enabled: false
         properties:
             id:
                 identifier: true
@@ -35,11 +39,15 @@ resources:
                     groups: ['cart_item:item:get']
                 access_control: 'is_granted("coreshop_api_cart_item", object)'
         subresourceOperations: []
+        graphql:
+            item_query:
+                pagination_enabled: false
         properties:
             id:
                 identifier: true
 
     CoreShop\Bundle\ApiBundle\Action\Cart\AddToCartAction:
+        shortName: 'AddToCart'
         collectionOperations:
             add_item:
                 path: '/cart/{id}/add-item'
@@ -55,7 +63,19 @@ resources:
                             schema:
                                 type: string
         itemOperations: []
+        graphql:
+            create:
+                input: CoreShop\Bundle\ApiBundle\Action\Cart\AddToCartGraphQlActionInput
         attributes:
             messenger: true
             input: CoreShop\Bundle\ApiBundle\Action\Cart\AddToCartActionInput
             output: CoreShop\Bundle\ApiBundle\ViewModel\Cart\CartSummaryView
+
+    CoreShop\Bundle\ApiBundle\Action\Cart\AddToCartGraphQlActionInput:
+        collectionOperations: []
+        itemOperations: []
+        graphql: []
+        properties:
+            id:
+                identifier: true
+

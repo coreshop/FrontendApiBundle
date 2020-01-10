@@ -6,6 +6,8 @@ resources:
                 path: '/product/{id}'
                 requirements:
                     id: '\d+'
+        graphql:
+            item_query:
         properties:
             id:
                 identifier: true

@@ -6,7 +6,7 @@
  * For the full copyright and license information, please view the LICENSE.md and gpl-3.0.txt
  * files that are distributed with this source code.
  *
- * @copyright  Copyright (c) 2015-2019 Dominik Pfaffenbauer (https://www.pfaffenbauer.at)
+ * @copyright  Copyright (c) 2015-2020 Dominik Pfaffenbauer (https://www.pfaffenbauer.at)
  * @license    https://www.coreshop.org/license     GNU General Public License version 3 (GPLv3)
  */
 
@@ -15,6 +15,7 @@ namespace CoreShop\Bundle\ApiBundle\ApiPlatform\DataTransformer;
 use ApiPlatform\Core\DataTransformer\DataTransformerInterface;
 use CoreShop\Bundle\ApiBundle\Action\Cart\AddToCartAction;
 use CoreShop\Bundle\ApiBundle\Action\Cart\AddToCartActionInput;
+use CoreShop\Bundle\ApiBundle\Action\Cart\AddToCartGraphQlActionInput;
 use CoreShop\Component\Order\Model\CartInterface;
 use CoreShop\Component\Order\Model\PurchasableInterface;
 use CoreShop\Component\Resource\Repository\RepositoryInterface;
@@ -62,7 +63,13 @@ class AddToCartInputTransformer implements DataTransformerInterface
          */
         Assert::isInstanceOf($object, AddToCartActionInput::class);
 
-        $cartId = $this->requestStack->getCurrentRequest()->get('id');
+        if ($object instanceof AddToCartGraphQlActionInput) {
+            $cartId = $object->cartId;
+        }
+        else {
+            $cartId = $this->requestStack->getCurrentRequest()->get('id');
+        }
+
         $cart = $this->cartRepository->find($cartId);
 
         if (!$cart instanceof CartInterface) {

@@ -11,6 +11,13 @@ services:
         tags:
             - { name: api_platform.item_data_provider }
 
+    CoreShop\Bundle\ApiBundle\ApiPlatform\SubresourceDataProvider\Cart\CartItemsSubresourceViewProvider:
+        arguments:
+            - '@coreshop.repository.cart'
+            - '@CoreShop\Bundle\ApiBundle\ViewFactory\Cart\CartItemViewFactoryInterface'
+        tags:
+            - { name: api_platform.subresource_data_provider }
+
     CoreShop\Bundle\ApiBundle\ApiPlatform\ItemProvider\ProductViewProvider:
         arguments:
             - '@CoreShop\Bundle\ApiBundle\ViewRepository\ProductViewRepositoryInterface'

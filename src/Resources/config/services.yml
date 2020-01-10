@@ -5,3 +5,9 @@ imports:
     - { resource: 'services/api_platform.yml' }
     - { resource: 'services/security/voters.yml' }
 
+services:
+    CoreShop\Bundle\ApiBundle\PropertyInfo\PhpDocExtractor:
+        arguments:
+            - '@property_info.php_doc_extractor'
+        tags:
+            - { name: property_info.type_extractor }

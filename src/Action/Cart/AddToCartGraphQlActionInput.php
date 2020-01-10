@@ -10,16 +10,16 @@
  * @license    https://www.coreshop.org/license     GNU General Public License version 3 (GPLv3)
  */
 
-namespace CoreShop\Bundle\ApiBundle\Request\Cart;
+namespace CoreShop\Bundle\ApiBundle\Action\Cart;
 
 use Symfony\Component\Validator\Constraints as Assert;
 
-class SummarizeCartRequest
+class AddToCartGraphQlActionInput extends  AddToCartActionInput
 {
     /**
      * @var int
      *
      * @Assert\NotBlank
      */
-    public $id;
+    public $cartId;
 }
