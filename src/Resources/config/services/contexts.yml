@@ -1,0 +1,13 @@
+services:
+    CoreShop\Bundle\ApiBundle\Context\TokenValueBasedCartContext:
+        arguments:
+            - '@Symfony\Component\HttpFoundation\RequestStack'
+            - '@coreshop.repository.order'
+            - '/api'
+        tags:
+            - { name: coreshop.context.cart, priority: 1000 }
+
+    CoreShop\Bundle\ApiBundle\Context\UserContextInterface: '@CoreShop\Bundle\ApiBundle\Context\TokenBasedUserContext'
+    CoreShop\Bundle\ApiBundle\Context\TokenBasedUserContext:
+        arguments:
+            - '@Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface'

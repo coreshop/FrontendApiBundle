@@ -1,0 +1,36 @@
+services:
+    CoreShop\Bundle\ApiBundle\CommandHandler\Cart\PickupCartHandler:
+        arguments:
+            - '@coreshop.factory.order'
+            - '@CoreShop\Component\Store\Context\StoreContextInterface'
+            - '@CoreShop\Bundle\ApiBundle\Context\UserContextInterface'
+            - '@CoreShop\Component\Order\Manager\CartManagerInterface'
+        tags:
+            - { name: messenger.message_handler }
+
+    CoreShop\Bundle\ApiBundle\CommandHandler\Cart\AddItemToCartHandler:
+        arguments:
+            - '@coreshop.repository.order'
+            - '@coreshop.repository.stack.purchasable'
+            - '@CoreShop\Component\Order\Cart\CartModifierInterface'
+            - '@coreshop.factory.order_item'
+            - '@coreshop.cart_item.quantity_modifier'
+            - '@coreshop.cart.manager'
+        tags:
+            - { name: messenger.message_handler }
+
+    CoreShop\Bundle\ApiBundle\CommandHandler\Cart\ChangeItemQuantityInCartHandler:
+        arguments:
+            - '@coreshop.repository.order_item'
+            - '@coreshop.cart_item.quantity_modifier'
+            - '@coreshop.cart.manager'
+        tags:
+            - { name: messenger.message_handler }
+
+    CoreShop\Bundle\ApiBundle\CommandHandler\Cart\RemoveItemFromCartHandler:
+        arguments:
+            - '@coreshop.repository.order_item'
+            - '@CoreShop\Component\Order\Cart\CartModifierInterface'
+            - '@coreshop.cart.manager'
+        tags:
+            - { name: messenger.message_handler }

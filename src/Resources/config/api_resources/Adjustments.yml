@@ -1,0 +1,27 @@
+resources:
+    '%coreshop.model.adjustment.class%':
+        shortName: 'CoreShop_Adjustment'
+        attributes:
+            normalization_context:
+                groups: [ 'coreshop_adjustment:read' ]
+            validation_groups: 'coreshop'
+
+            collectionOperations: ~
+            itemOperations: ~
+
+        properties:
+            typeIdentifier:
+                readable: true
+                writable: true
+            label:
+                readable: true
+                writable: true
+            pimcoreAmountNet:
+                readable: true
+                writable: true
+            pimcoreAmountGross:
+                readable: true
+                writable: true
+            pimcoreNeutral:
+                readable: true
+                writable: true

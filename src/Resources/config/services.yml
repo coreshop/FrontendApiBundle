@@ -1,13 +1,9 @@
 imports:
-    - { resource: 'services/factories.yml' }
-    - { resource: 'services/repositories.yml' }
-    - { resource: 'services/handlers.yml' }
-    - { resource: 'services/api_platform.yml' }
-    - { resource: 'services/security/voters.yml' }
+    - { resource: "services/applicators.yml" }
+    - { resource: "services/contexts.yml" }
+    - { resource: "services/command_handlers.yml" }
 
 services:
-    CoreShop\Bundle\ApiBundle\PropertyInfo\PhpDocExtractor:
-        arguments:
-            - '@property_info.php_doc_extractor'
+    CoreShop\Bundle\ApiBundle\DataTransformer\OrderTokenAwareInputCommandDataTransformer:
         tags:
-            - { name: property_info.type_extractor }
+            - { name: coreshop.api.command_data_transformer }

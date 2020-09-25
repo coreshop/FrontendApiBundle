@@ -1,0 +1,62 @@
+CoreShop\Component\Core\Model\Order:
+    attributes:
+        id:
+            groups:
+                - coreshop_order:read
+        token:
+            groups:
+                - coreshop_order:read
+        orderNumber:
+            groups:
+                - coreshop_order:read
+        items:
+            groups:
+                - coreshop_order:read
+        saleState:
+            groups:
+                - coreshop_order:read
+        orderState:
+            groups:
+                - coreshop_order:read
+        paymentState:
+            groups:
+                - coreshop_order:read
+        store:
+            groups:
+                - coreshop_order:read
+        customer:
+            groups:
+                - coreshop_order:read
+        discountNet:
+            groups:
+                - coreshop_order:read
+        discountGross:
+            groups:
+                - coreshop_order:read
+        totalNet:
+            groups:
+                - coreshop_order:read
+        totalGross:
+            groups:
+                - coreshop_order:read
+        subtotalNet:
+            groups:
+                - coreshop_order:read
+        subtotalGross:
+            groups:
+                - coreshop_order:read
+        paymentTotal:
+            groups:
+                - coreshop_order:read
+        pimcoreAdjustmentTotalNet:
+            groups:
+                - coreshop_order:read
+        pimcoreAdjustmentTotalGross:
+            groups:
+                - coreshop_order:read
+        adjustmentItems:
+            groups:
+                - coreshop_order:read
+        taxes:
+            groups:
+                - coreshop_order:read

@@ -1,7 +1,0 @@
-services:
-    CoreShop\Bundle\ApiBundle\ViewRepository\ProductViewRepositoryInterface: '@CoreShop\Bundle\ApiBundle\ViewRepository\ProductViewRepository'
-    CoreShop\Bundle\ApiBundle\ViewRepository\ProductViewRepository:
-        arguments:
-            - '@coreshop.repository.stack.purchasable'
-            - '@CoreShop\Bundle\ApiBundle\ViewFactory\Product\ProductViewFactoryInterface'
-            - '@coreshop.context.store'

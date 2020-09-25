@@ -10,16 +10,18 @@
  * @license    https://www.coreshop.org/license     GNU General Public License version 3 (GPLv3)
  */
 
+declare(strict_types=1);
+
 namespace CoreShop\Bundle\ApiBundle;
 
-use ApiPlatform\Core\Bridge\Symfony\Bundle\ApiPlatformBundle;
-use Lexik\Bundle\JWTAuthenticationBundle\LexikJWTAuthenticationBundle;
+use CoreShop\Bundle\ApiBundle\DependencyInjection\Compiler\CommandDataTransformerPass;
 use Pimcore\Extension\Bundle\PimcoreBundleInterface;
 use Pimcore\Extension\Bundle\Traits\PackageVersionTrait;
 use Pimcore\HttpKernel\Bundle\DependentBundleInterface;
 use Pimcore\HttpKernel\BundleCollection\BundleCollection;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
+use Wvision\Bundle\PimcoreApiPlatformBundle\PimcoreApiPlatformBundle;
 
 class CoreShopApiBundle extends Bundle implements PimcoreBundleInterface, DependentBundleInterface
 {
@@ -27,8 +29,7 @@ class CoreShopApiBundle extends Bundle implements PimcoreBundleInterface, Depend
 
     public static function registerDependentBundles(BundleCollection $collection)
     {
-        $collection->addBundle(new LexikJWTAuthenticationBundle());
-        $collection->addBundle(new ApiPlatformBundle());
+        $collection->addBundle(new PimcoreApiPlatformBundle());
     }
 
     /**
@@ -37,6 +38,8 @@ class CoreShopApiBundle extends Bundle implements PimcoreBundleInterface, Depend
     public function build(ContainerBuilder $container)
     {
         parent::build($container);
+
+        $container->addCompilerPass(new CommandDataTransformerPass());
     }
 
     /**

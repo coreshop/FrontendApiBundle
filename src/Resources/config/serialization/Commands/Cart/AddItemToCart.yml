@@ -1,0 +1,9 @@
+CoreShop\Bundle\ApiBundle\Command\Cart\AddItemToCart:
+    attributes:
+        productId:
+            groups:
+                - coreshop_cart:add_item
+        quantity:
+            groups:
+                - coreshop_cart:add_item
+

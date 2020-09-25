@@ -1,4 +1,0 @@
-imports:
-    - { resource: 'api_platform/item_providers.yml' }
-    - { resource: 'api_platform/data_persisters.yml' }
-    - { resource: 'api_platform/data_transformers.yml' }

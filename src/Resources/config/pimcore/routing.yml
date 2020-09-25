@@ -1,8 +1,0 @@
-coreshop_api_platform:
-    resource: api
-    type: api_platform
-    prefix: /coreshop-api-platform
-
-coreshop_api_platform_authentication_token:
-    path: /coreshop-api-platform/authentication_token
-    methods: ['POST']

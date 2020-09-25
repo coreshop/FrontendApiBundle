@@ -1,0 +1,9 @@
+CoreShop\Bundle\ApiBundle\Command\Cart\ChangeItemQuantityInCart:
+    attributes:
+        orderItemId:
+            groups:
+                - coreshop_cart:change_quantity
+        quantity:
+            groups:
+                - coreshop_cart:change_quantity
+

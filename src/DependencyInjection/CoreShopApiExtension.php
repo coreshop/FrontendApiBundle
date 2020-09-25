@@ -10,25 +10,24 @@
  * @license    https://www.coreshop.org/license     GNU General Public License version 3 (GPLv3)
  */
 
+declare(strict_types=1);
+
 namespace CoreShop\Bundle\ApiBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
-use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
+use Symfony\Component\DependencyInjection\Loader;
 
-final class CoreShopApiExtension extends Extension
+class CoreShopApiExtension extends Extension
 {
-    /** {@inheritdoc} */
-    public function load(array $config, ContainerBuilder $container): void
+    /**
+     * {@inheritdoc}
+     * @throws \Exception
+     */
+    public function load(array $configs, ContainerBuilder $container)
     {
-        $config = $this->processConfiguration($this->getConfiguration([], $container), $config);
-        $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
-
-        foreach ($config['view_classes'] as $view => $class) {
-            $container->setParameter(sprintf('coreshop.api.view_model.%s.class', $view), $class);
-        }
-
+        $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
     }
 }

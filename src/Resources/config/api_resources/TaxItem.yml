@@ -1,0 +1,21 @@
+resources:
+    '%coreshop.model.tax_item.class%':
+        shortName: 'CoreShop_TaxItem'
+        attributes:
+            normalization_context:
+                groups: [ 'coreshop_tax_item:read' ]
+            validation_groups: 'coreshop'
+
+            collectionOperations: ~
+            itemOperations: ~
+
+        properties:
+            name:
+                readable: true
+                writable: false
+            rate:
+                readable: true
+                writable: false
+            amount:
+                readable: true
+                writable: false

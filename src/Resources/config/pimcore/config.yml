@@ -1,0 +1,26 @@
+imports:
+    - { resource: "messenger.yml" }
+
+api_platform:
+    messenger:
+        enabled: true
+    patch_formats:
+        json: ['application/merge-patch+json']
+    swagger:
+        versions: [3]
+        api_keys:
+            apiKey:
+                name: Authorization
+                type: header
+    exception_to_status:
+    collection:
+        pagination:
+            client_items_per_page: true
+framework:
+    messenger:
+        buses:
+            coreshop_default.bus:
+                middleware:
+                    - 'validation'
+                    - 'doctrine_transaction'
+

@@ -1,0 +1,110 @@
+resources:
+    '%coreshop.model.order.class%':
+        shortName: 'CoreShop_Order'
+        attributes:
+            normalization_context:
+                groups: ['coreshop_order:read']
+            validation_groups: 'coreshop'
+
+        collectionOperations:
+            store_post:
+                method: POST
+                path: /store/orders
+                messenger: input
+                input: CoreShop\Bundle\ApiBundle\Command\Cart\PickupCart
+                denormalization_context:
+                    groups: ['coreshop_order:create']
+                openapi_context:
+                    summary: 'Pickups a new cart'
+
+        itemOperations:
+            store_get:
+                method: GET
+                path: /store/orders/{id}
+
+            store_delete:
+                method: DELETE
+                path: /store/orders/{id}
+                openapi_context:
+                    summary: Deletes Cart
+
+            store_add_item:
+                method: PATCH
+                path: store/orders/{id}/items
+                messenger: input
+                input: CoreShop\Bundle\ApiBundle\Command\Cart\AddItemToCart
+                denormalization_context:
+                    groups: ['coreshop_cart:add_item']
+                openapi_context:
+                    summary: Adds Item to cart
+
+            store_change_quantity:
+                method: PATCH
+                path: /store/orders/{id}/change-quantity
+                messenger: input
+                input: CoreShop\Bundle\ApiBundle\Command\Cart\ChangeItemQuantityInCart
+                denormalization_context:
+                    groups: ['coreshop_cart:change_quantity']
+                openapi_context:
+                    summary: Update quantity of item
+
+            store_remove_item:
+                method: PATCH
+                path: /store/orders/{id}/remove
+                messenger: input
+                input: CoreShop\Bundle\ApiBundle\Command\Cart\RemoveItemFromCart
+                denormalization_context:
+                    groups: ['coreshop_cart:remove_item']
+                openapi_context:
+                    summary: Remove item from cart
+
+        subresourceOperations:
+            items_get_subresource:
+                method: GET
+                path: /store/orders/{id}/items
+
+        properties:
+            id:
+                identifier: false
+                writable: false
+            token:
+                writable: false
+                identifier: true
+            orderNumber:
+                writable: false
+            saleState:
+                writable: false
+            orderState:
+                writable: false
+            paymentState:
+                writable: false
+            store:
+                writable: false
+            customer:
+                writable: false
+            discountNet:
+                writable: false
+            discountGross:
+                writable: false
+            totalNet:
+                writable: false
+            totalGross:
+                writable: false
+            subtotalNet:
+                writable: false
+            subtotalGross:
+                writable: false
+            paymentTotal:
+                writable: false
+            items:
+                readable: true
+                writable: true
+            pimcoreAdjustmentTotalNet:
+                writable: false
+            pimcoreAdjustmentTotalGross:
+                writable: false
+            adjustmentItems:
+                readable: true
+            taxes:
+                readable: true
+

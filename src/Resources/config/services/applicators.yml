@@ -1,0 +1,5 @@
+services:
+    CoreShop\Bundle\ApiBundle\Applicator\OrderStateMachineTransitionApplicatorInterface: '@CoreShop\Bundle\ApiBundle\Applicator\OrderStateMachineTransitionApplicator'
+    CoreShop\Bundle\ApiBundle\Applicator\OrderStateMachineTransitionApplicator:
+        arguments:
+            - '@CoreShop\Bundle\WorkflowBundle\Manager\StateMachineManagerInterface'

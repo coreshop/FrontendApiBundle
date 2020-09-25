@@ -1,3 +1,0 @@
-imports:
-    - { resource: 'repositories/cart.yml' }
-    - { resource: 'repositories/product.yml' }

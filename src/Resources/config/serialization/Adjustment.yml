@@ -1,0 +1,17 @@
+CoreShop\Component\Order\Model\AdjustmentInterface:
+    attributes:
+        typeIdentifier:
+            groups:
+                - coreshop_adjustment:read
+        label:
+            groups:
+                - coreshop_adjustment:read
+        pimcoreAmountNet:
+            groups:
+                - coreshop_adjustment:read
+        pimcoreAmountGross:
+            groups:
+                - coreshop_adjustment:read
+        pimcoreNeutral:
+            groups:
+                - coreshop_adjustment:read

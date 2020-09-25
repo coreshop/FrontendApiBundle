@@ -1,0 +1,77 @@
+CoreShop\Component\Core\Model\OrderItem:
+    attributes:
+        id:
+            groups:
+                - coreshop_order_item:read
+        name:
+            groups:
+                - coreshop_order_item:read
+        quantity:
+            groups:
+                - coreshop_order_item:read
+        isGiftItem:
+            groups:
+                - coreshop_order_item:read
+        digitalProduct:
+            groups:
+                - coreshop_order_item:read
+        unit:
+            groups:
+                - coreshop_order_item:read
+        product:
+            groups:
+                - coreshop_order_item:read
+        itemWeight:
+            groups:
+                - coreshop_order_item:read
+        totalWeight:
+            groups:
+                - coreshop_order_item:read
+        itemWholesalePrice:
+            groups:
+                - coreshop_order_item:read
+        customItemPrice:
+            groups:
+                - coreshop_order_item:read
+        itemDiscountNet:
+            groups:
+                - coreshop_order_item:read
+        itemDiscountGross:
+            groups:
+                - coreshop_order_item:read
+        itemDiscountPriceNet:
+            groups:
+                - coreshop_order_item:read
+        itemDiscountPriceGross:
+            groups:
+                - coreshop_order_item:read
+        itemPriceNet:
+            groups:
+                - coreshop_order_item:read
+        itemPriceGross:
+            groups:
+                - coreshop_order_item:read
+        itemRetailPriceNet:
+            groups:
+                - coreshop_order_item:read
+        totalNet:
+            groups:
+                - coreshop_order_item:read
+        totalGross:
+            groups:
+                - coreshop_order_item:read
+        itemTax:
+            groups:
+                - coreshop_order_item:read
+        taxes:
+            groups:
+                - coreshop_order_item:read
+        pimcoreAdjustmentTotalNet:
+            groups:
+                - coreshop_order_item:read
+        pimcoreAdjustmentTotalGross:
+            groups:
+                - coreshop_order_item:read
+        adjustmentItems:
+            groups:
+                - coreshop_order_item:read

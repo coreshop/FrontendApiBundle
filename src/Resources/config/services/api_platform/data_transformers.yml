@@ -1,8 +1,0 @@
-services:
-    CoreShop\Bundle\ApiBundle\ApiPlatform\DataTransformer\AddToCartInputTransformer:
-        arguments:
-            - '@request_stack'
-            - '@coreshop.repository.cart'
-            - '@coreshop.repository.stack.purchasable'
-        tags:
-            - { name: api_platform.data_transformer }

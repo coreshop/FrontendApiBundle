@@ -1,0 +1,11 @@
+CoreShop\Component\Taxation\Model\TaxItem:
+    attributes:
+        name:
+            groups:
+                - coreshop_tax_item:read
+        rate:
+            groups:
+                - coreshop_tax_item:read
+        amount:
+            groups:
+                - coreshop_tax_item:read

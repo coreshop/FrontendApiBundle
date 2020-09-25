@@ -1,0 +1,63 @@
+resources:
+    '%coreshop.model.order_item.class%':
+        shortName: 'CoreShop_OrderItem'
+        attributes:
+            normalization_context:
+                groups: ['coreshop_order_item:read']
+            validation_groups: 'coreshop'
+
+        collectionOperations:
+
+        itemOperations:
+
+        properties:
+            name:
+                readable: true
+            order:
+                readable: true
+            quantity:
+                readable: true
+            isGiftItem:
+                readable: true
+            digitalProduct:
+                readable: true
+            unit:
+                readable: true
+            product:
+                readable: true
+            itemWeight:
+                readable: true
+            totalWeight:
+                readable: true
+            itemWholesalePrice:
+                readable: true
+            customItemPrice:
+                readable: true
+            itemDiscountNet:
+                readable: true
+            itemDiscountGross:
+                readable: true
+            itemDiscountPriceNet:
+                readable: true
+            itemDiscountPriceGross:
+                readable: true
+            itemPriceNet:
+                readable: true
+            itemPriceGross:
+                readable: true
+            itemRetailPriceNet:
+                readable: true
+            totalNet:
+                readable: true
+            totalGross:
+                readable: true
+            itemTax:
+                readable: true
+            taxes:
+                readable: true
+            pimcoreAdjustmentTotalNet:
+                readable: true
+            pimcoreAdjustmentTotalGross:
+                readable: true
+            adjustmentItems:
+                readable: true

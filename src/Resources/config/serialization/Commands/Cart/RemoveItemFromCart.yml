@@ -1,0 +1,5 @@
+CoreShop\Bundle\ApiBundle\Command\Cart\RemoveItemFromCart:
+    attributes:
+        orderItemId:
+            groups:
+                - coreshop_cart:remove_item

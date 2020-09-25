@@ -1,0 +1,11 @@
+imports:
+    - { resource: parameters.yml }
+    - { resource: security.yml }
+    - { resource: services.yml }
+    - { resource: system.yml }
+    - { resource: 'local/' }
+
+
+framework:
+    profiler:
+        enabled: false
